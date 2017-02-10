@@ -2,10 +2,21 @@
 
 var button = document.getElementsByClassName('button');
 
-for ( var i = 0 ; i <= button.lenght ; i++) {
-	function getText() {
-		alert(button.innerText);
 
-	}
+function getText(element) {
+	alert(element.innerText);
+
 }
-console.log(button.innerText);
+
+// getText(button[0]);
+
+for ( var i = 0 ; i < button.length ; i++) {
+	// button[i].onclick = function (e) { //nadpisuje narzucone eventy
+	// 	alert(1);
+	// };
+
+	button[i].addEventListener("click",	function(event) { //dodaje funkcje
+		// console.log(event);
+		getText(this);
+	}, false);
+}
